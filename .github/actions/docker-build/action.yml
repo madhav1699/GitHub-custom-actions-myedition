@@ -5,15 +5,20 @@ inputs:
     description: it selects the working directory to run
     required: false
     default: '.'
-
   image-name:
     required: true
-  
   image-tag:
+    required: true
+  docker-username:
+    required: true
+  docker-password:
     required: true
 
 outputs:
-  
+  docker_build_output: 
+    value: ${{steps.dockbuild_tag.outputs.docbuild_result}}
+  docker_push_output:
+    value: ${{steps.dockpush_tag.outputs.docpush_result}}
 
 runs:
   using: composite

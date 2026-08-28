@@ -5,25 +5,29 @@ inputs:
     description: it selects the java-version
     required: false
     default: '21'
-
   distribution:
     description: it slects the java distribution
     required: false
     default: 'temurin'
-  
   working-directory:
     description: it selects the working directory to run
     required: false
     default: '.'
-
   artifact-name:
     description: it slects the artifact name
     required: false
     default: 'myjar'
 
 
-
 outputs:
+  code_test_output:
+    value: ${{steps.test_tag.outputs.test_result}}
+  code_build_output: 
+    value: ${{steps.build_tag.outputs.build_result}}
+  code_artifact_output:
+    value: ${{steps.artifact_tag.outputs.artifact_result}}
+
+
 runs:
   using: composite
   steps:
