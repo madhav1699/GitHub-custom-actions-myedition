@@ -60,6 +60,8 @@ runs:
         path: target/*.jar
 
     - name: Artifact Summary
+      shell: bash
+      working-directory: ${{inputs.working-directory}}
       id: artifact_tag
       run: |
         echo "artifact_result= Artifact is uploaded successfully!" >> $GITHUB_OUTPUT

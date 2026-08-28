@@ -47,7 +47,7 @@ runs:
 
     - name: Docker Summary
       shell: bash
-      working-directory:
+      working-directory: ${{inputs.working-directory}}
       run: |
         echo "${{steps.docbuild_tag.outputs.docbuild_result}}"
         echo "${{steps.docpush_tag.outputs.docpush_result}}"
