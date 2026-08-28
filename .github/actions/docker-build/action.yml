@@ -16,9 +16,9 @@ inputs:
 
 outputs:
   docker_build_output: 
-    value: ${{steps.dockbuild_tag.outputs.docbuild_result}}
+    value: ${{steps.docbuild_tag.outputs.docbuild_result}}
   docker_push_output:
-    value: ${{steps.dockpush_tag.outputs.docpush_result}}
+    value: ${{steps.docpush_tag.outputs.docpush_result}}
 
 runs:
   using: composite
